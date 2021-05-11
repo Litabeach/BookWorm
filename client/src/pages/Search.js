@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
+import DeleteBtn from "../components/DeleteBtn";
+import {Input, FormBtn} from "../components/Form";
 import API from "../utils/API";
 
 
