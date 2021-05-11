@@ -17,6 +17,25 @@ const Search = () => {
     setSearchBook(value);
   };
 
+    // When the form is submitted, use the API.saveBook method to save the book data
+  // Then reload books from the database
+  const handleFormSubmit = e => {
+    e.preventDefault();
+    API.getBooks(searchBook)
+      .then((res) => {
+        setBooks(res.data.items);
+      })
+      .catch((err) => console.log(err));
+  };
+  
+  const handleSaveBook = (e, data) => {
+    e.preventDefault();
+
+    API.saveBook(data)
+      .then((res) => alert("Book Saved!"))
+      .catch((err) => console.log(err));
+  };
+
 // function Detail(props) {
 //   const [book, setBook] = useState({})
 
