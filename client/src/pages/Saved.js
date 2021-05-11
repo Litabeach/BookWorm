@@ -7,24 +7,26 @@ import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
 
-function Books() {
+const Saved = () => {
   // Setting our component's initial state
-  const [books, setBooks] = useState([])
-  const [formObject, setFormObject] = useState({})
+  const [books, setBooks] = useState([]);
 
-  // Load all books and store them with setBooks
+
+  // Loads all saved books and sets them to books
+  const loadSavedBooks = async () => {
+      try {
+          const saved = await API.getSavedBooks();
+          setBooks(saved.data);
+      } catch (err) {
+          throw err;
+      }
+  }
+
+  // Loads all books
   useEffect(() => {
-    loadBooks()
-  }, [])
+    loadSavedBooks();
+}, [books]);
 
-  // Loads all books and sets them to books
-  function loadBooks() {
-    API.getBooks()
-      .then(res => 
-        setBooks(res.data)
-      )
-      .catch(err => console.log(err));
-  };
 
   // Deletes a book from the database with a given id, then reloads books from the db
   function deleteBook(id) {
@@ -112,4 +114,4 @@ function Books() {
   }
 
 
-export default Books;
+export default Saved;
