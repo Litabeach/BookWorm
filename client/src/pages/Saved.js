@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import API from "../utils/API"
+import Jumbotron from "../components/Jumbotron";
 
 const Saved = () => {
   // Setting our component's initial state
@@ -37,6 +38,9 @@ const Saved = () => {
 
   return (
     <Container fluid>
+         <Jumbotron>
+            <h1>My Books</h1>
+          </Jumbotron>
       <Col size="md-2">
             <Link to="/">← Back to Search</Link>
           </Col>

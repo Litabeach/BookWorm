@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Row, Container } from "../components/Grid";
 import {Input, FormBtn} from "../components/Form";
 import API from "../utils/API";
+import "./style.css"
+import Jumbotron from "../components/Jumbotron";
 
 const Search = () => {
   // Setting our component's initial state
@@ -38,6 +40,9 @@ const Search = () => {
     <Container>
       <Row>
         <Container fluid>
+          <Jumbotron>
+            <h1>My Books</h1>
+          </Jumbotron>
           <h4>Book Search</h4>
           <Input
             placeholder="Search Google Books"
@@ -55,19 +60,17 @@ const Search = () => {
             >
               {books.map((book) => {
                 return (
-                  <div
+                  <div 
                     key={book.id}
-                    className="card col-sm-3"
-                    style={{ margin: "15px" }}
+                    className="book card col-sm-3"
                   >
-                    <img
+                    <img 
                       src={
                         book.volumeInfo.imageLinks
                           ? book.volumeInfo.imageLinks.thumbnail
                           : "http://icons.iconarchive.com/icons/paomedia/small-n-flat/128/book-icon.png"
                       }
-                      className="card-img-top"
-                      style={{ height: 260 }}
+                      className="img card-img-top"
                       alt="..."
                     ></img>
                     <div className="card-body">
@@ -108,7 +111,6 @@ const Search = () => {
                         rel="noopener noreferrer"
                         target={"_blank"}
                         className="card-link"
-                        style={{ padding: '0px', textAlign: 'center' }}
                       >
                         Purchase
                         </a>
