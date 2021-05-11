@@ -36,47 +36,97 @@ const Search = () => {
       .catch((err) => console.log(err));
   };
 
-// function Detail(props) {
-//   const [book, setBook] = useState({})
+  return (
+    <Container>
+      <Row>
+        <Container fluid>
+          <h4>Book Search</h4>
+          <Input
+            placeholder="Search Google Books"
+            onChange={handleInputChange}
+          />
+          <FormBtn onClick={handleFormSubmit}>Search</FormBtn>
+        </Container>
+      </Row>
+      <Row>
+        <Container>
+          {books.length ? (
+            <div
+              className="row row-cols-3"
+              style={{ justifyContent: "center" }}
+            >
+              {books.map((book) => {
+                return (
+                  <div
+                    key={book.id}
+                    className="card col-sm-3"
+                    style={{ margin: "15px" }}
+                  >
+                    <img
+                      src={
+                        book.volumeInfo.imageLinks
+                          ? book.volumeInfo.imageLinks.thumbnail
+                          : "http://icons.iconarchive.com/icons/paomedia/small-n-flat/128/book-icon.png"
+                      }
+                      className="card-img-top"
+                      style={{ height: 260 }}
+                      alt="..."
+                    ></img>
+                    <div className="card-body">
+                      <h5 className="card-title">
+                        {book.volumeInfo.title}
+                      </h5>
+                      <p className="card-text">
+                        {book.volumeInfo.description
+                          ? book.volumeInfo.description.length >=
+                            120
+                            ? book.volumeInfo.description.slice(
+                              0,
+                              120
+                            )
+                            : book.volumeInfo.description
+                          : "No Description Available"} ...
+                      </p>
+                      <button
+                        className="btn btn-dark"
+                        onClick={(e) =>
+                          handleSaveBook(e, {
+                            title: book.volumeInfo.title,
+                            image: book.volumeInfo.imageLinks
+                              ? book.volumeInfo.imageLinks
+                                .thumbnail
+                              : "http://icons.iconarchive.com/icons/paomedia/small-n-flat/128/book-icon.png",
+                            author: book.volumeInfo.authors[0],
+                            description:
+                              book.volumeInfo.description,
+                            link: book.volumeInfo.infoLink,
+                          })
+                        }
+                      >
+                        SAVE
+                        </button><p></p>
+                      <a
+                        href={book.volumeInfo.infoLink}
+                        rel="noopener noreferrer"
+                        target={"_blank"}
+                        className="card-link"
+                        style={{ padding: '0px', textAlign: 'center' }}
+                      >
+                        Purchase
+                        </a>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          ) : (
+              <h5>No Results to Display</h5>
+            )}
+        </Container>
+      </Row>
+    </Container>
+  );
+};
+export default Search;
 
-//   // When this component mounts, grab the book with the _id of props.match.params.id
-//   // e.g. localhost:3000/books/599dcb67f0f16317844583fc
-//   const {id} = useParams()
-//   useEffect(() => {
-//     API.getBook(id)
-//       .then(res => setBook(res.data))
-//       .catch(err => console.log(err));
-//   }, [])
 
-//   return (
-//       <Container fluid>
-//         <Row>
-//           <Col size="md-12">
-//             <Jumbotron>
-//               <h1>
-//                 {book.title} by {book.author}
-//               </h1>
-//             </Jumbotron>
-//           </Col>
-//         </Row>
-//         <Row>
-//           <Col size="md-10 md-offset-1">
-//             <article>
-//               <h1>Synopsis</h1>
-//               <p>
-//                 {book.synopsis}
-//               </p>
-//             </article>
-//           </Col>
-//         </Row>
-//         <Row>
-//           <Col size="md-2">
-//             <Link to="/">← Back to Authors</Link>
-//           </Col>
-//         </Row>
-//       </Container>
-//     );
-//   }
-
-
-// export default Detail;
