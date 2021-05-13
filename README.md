@@ -4,7 +4,7 @@
 
 A React-based Google Books Search app. Users can search for books, view and purchase them in Google books, and save them to their bookshelf. Books in the bookshelf can be viewed or deleted.
 
-Visit the site: https://litabeach.github.io/Work-E-Pedia/
+Visit the site: https://bookworm-application.herokuapp.com/
 
 ## Table of Contents
 
