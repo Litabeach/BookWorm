@@ -9,7 +9,7 @@ function Nav() {
         BookWorm
       </a>
       <Link className="navLink" to="/search">Search</Link>
-        <Link className="navLink" to="/saved">Saved</Link>
+        <Link className="navLink" to="/saved">Bookshelf</Link>
     </nav>
   );
 }
