@@ -120,7 +120,7 @@ const Search = () => {
               })}
             </div>
           ) : (
-              <h5>No Results to Display</h5>
+              <h5></h5>
             )}
         </Container>
       </Row>
