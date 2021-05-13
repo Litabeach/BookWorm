@@ -9,15 +9,20 @@ Visit the site: https://bookworm-application.herokuapp.com/
 ## Table of Contents
 
 * [Usage](#usage)
+* [Installation](#installation)
 * [License](#license)
 * [Badges](#badges)
 
 ## Usage 
 
-Users can view non-sensitive data about other employees. Employees can be sorted by last name alphabetically as well as searched by name.
+Users can search for books or authors, results are returned from Google Books API. Users have the option to purchase the book from Google Books or save the book to their bookshelf. From the bookshelf page, users can view or delete saved books.
 
-![Screenshot of app table of employees](public/screenshot.png)
-![Screenshot of app table of employees sorted A-Z](public/screenshot2.png)
+![Screenshot of search page](client/src/images/search.png)
+![Screenshot of bookshelf page](client/src/images/bookshelf.png)
+
+## Installation 
+
+Run "npm i", then "npm start" from the command line, or you can check out the app on heroku without installation here:  https://bookworm-application.herokuapp.com/
 
 
 ## Copyright
@@ -33,4 +38,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 ## Badges
 
 ![Built with React badge](https://img.shields.io/badge/Built_with-React-green) 
+![Built with Express badge](https://img.shields.io/badge/Built_with-Express-blue) 
+![Built with Mongo badge](https://img.shields.io/badge/Built_with-Mongo-Red) 
+![Built with Node badge](https://img.shields.io/badge/Built_with-Node-Yellow) 
+![Built with Mongoose badge](https://img.shields.io/badge/Built_with-Mongoose-Purple) 
 
