@@ -77,17 +77,19 @@ const Saved = () => {
                       className='btn btn-dark'
                       onClick={() => handleDeleteBook(book._id)}
                     >
-                      Delete
-                    </button>
+                      DELETE
+                    </button> 
+                    <button  className="btn btn-view">
                     <a
                       href={book.link}
                       rel='noopener noreferrer'
                       target={'_blank'}
                       className='card-link'
-                      style={{ padding: '20px', textAlign: 'center' }}
+                      style={{ padding: '12px' }}
                     >
-                      View
+                      VIEW
                     </a>
+                    </button>
                   </div>
                 </div>
               );

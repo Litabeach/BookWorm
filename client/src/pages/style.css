@@ -8,6 +8,18 @@ body{
     margin: 20px
 }
 
+.btn{
+    margin-left: 5px;
+}
+
+.btn-view{
+    background-color: rgb(69, 69, 83);
+}
+
+.card-link{
+    color:white;
+}
+
 .card-text{
     overflow-y: scroll;
     height: 150px;

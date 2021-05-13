@@ -99,15 +99,17 @@ const Search = () => {
                         }
                       >
                         SAVE
-                        </button><p></p>
+                        </button>
+                        <button  className="btn btn-view">
                       <a
                         href={book.volumeInfo.infoLink}
                         rel="noopener noreferrer"
                         target={"_blank"}
                         className="card-link"
                       >
-                        View
+                        VIEW
                         </a>
+                        </button>
                     </div>
                   </div>
                 );
