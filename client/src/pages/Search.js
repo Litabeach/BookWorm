@@ -41,7 +41,7 @@ const Search = () => {
       <Row>
         <Container fluid>
           <Jumbotron>
-            <h1>My Books</h1>
+            <h1>Discover</h1>
           </Jumbotron>
           <h4>Book Search</h4>
           <Input
@@ -79,14 +79,8 @@ const Search = () => {
                       </h5>
                       <p className="card-text">
                         {book.volumeInfo.description
-                          ? book.volumeInfo.description.length >=
-                            120
-                            ? book.volumeInfo.description.slice(
-                              0,
-                              120
-                            )
-                            : book.volumeInfo.description
-                          : "No Description Available"} ...
+                          ? book.volumeInfo.description
+                          : "No Description Available"} 
                       </p>
                       <button
                         className="btn btn-dark"
@@ -112,7 +106,7 @@ const Search = () => {
                         target={"_blank"}
                         className="card-link"
                       >
-                        Purchase
+                        View
                         </a>
                     </div>
                   </div>

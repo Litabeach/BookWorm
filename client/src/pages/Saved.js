@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import API from "../utils/API"
 import Jumbotron from "../components/Jumbotron";
+import "./style.css";
 
 const Saved = () => {
   // Setting our component's initial state
@@ -54,8 +55,7 @@ const Saved = () => {
               return (
                 <div
                   key={book._id}
-                  className='card col-sm-3'
-                  style={{ margin: '5px' }}
+                  className='book card col-sm-3'
                 >
                   <img
                     src={
@@ -63,17 +63,14 @@ const Saved = () => {
                         ? book.image
                         : 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/128/book-icon.png'
                     }
-                    className='card-img-top'
-                    style={{ height: 300 }}
+                    className='img card-img-top'
                     alt='...'
                   ></img>
                   <div className='card-body'>
                     <h5 className='card-title'>{book.title}</h5>
                     <p className='card-text'>
                       {book.description
-                        ? book.description.length >= 200
-                          ? book.description.slice(0, 200)
-                          : book.description
+                        ? book.description
                         : 'No Description Available'}
                     </p>
                     <button
@@ -89,7 +86,7 @@ const Saved = () => {
                       className='card-link'
                       style={{ padding: '20px', textAlign: 'center' }}
                     >
-                      Book Link
+                      View
                     </a>
                   </div>
                 </div>
