@@ -77,6 +77,9 @@ const Search = () => {
                       <h5 className="card-title">
                         {book.volumeInfo.title}
                       </h5>
+                      <h5 className="card-title">
+                        {book.volumeInfo.authors}
+                      </h5>
                       <p className="card-text">
                         {book.volumeInfo.description
                           ? book.volumeInfo.description
@@ -91,7 +94,7 @@ const Search = () => {
                               ? book.volumeInfo.imageLinks
                                 .thumbnail
                               : "http://icons.iconarchive.com/icons/paomedia/small-n-flat/128/book-icon.png",
-                            author: book.volumeInfo.authors[0],
+                            authors: book.volumeInfo.authors[0],
                             description:
                               book.volumeInfo.description,
                             link: book.volumeInfo.infoLink,

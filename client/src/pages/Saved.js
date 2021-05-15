@@ -68,6 +68,7 @@ const Saved = () => {
                   ></img>
                   <div className='card-body'>
                     <h5 className='card-title'>{book.title}</h5>
+                    <h5 className='card-title'>{book.authors}</h5>
                     <p className='card-text'>
                       {book.description
                         ? book.description
