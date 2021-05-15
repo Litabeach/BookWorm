@@ -94,7 +94,7 @@ const Search = () => {
                               ? book.volumeInfo.imageLinks
                                 .thumbnail
                               : "http://icons.iconarchive.com/icons/paomedia/small-n-flat/128/book-icon.png",
-                            authors: book.volumeInfo.authors[0],
+                            authors: book.volumeInfo.authors,
                             description:
                               book.volumeInfo.description,
                             link: book.volumeInfo.infoLink,
